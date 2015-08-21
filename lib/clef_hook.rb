@@ -1,5 +1,5 @@
 class TryClef < Sinatra::Base
-
+  
   get '/login' do
     validate_state!
 
@@ -47,7 +47,7 @@ class TryClef < Sinatra::Base
     if is_valid_state
       session.delete :state
     else
-      halt(403, invalid_state_message)
+      halt 403, invalid_state_message
     end
   end
 
