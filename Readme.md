@@ -29,6 +29,14 @@ Install the dependencies:
 
 then connect to <http://localhost:9292>
 
+
+#### Deployment
+
+Rembember to change the session secret (`:session_secret`) in tryclef.rb
+
+Use heroku / dokku / passenger / puma / thin/unicorn on nginx or whatever you want
+
+
 #### TODO:
 
 - refactor clef_hook

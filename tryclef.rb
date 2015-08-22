@@ -1,4 +1,5 @@
 require_relative 'config/env'
+require_relative 'lib/user_helper'
 
 CLEF_API_BASE   = 'https://clef.io/api/v1'
 
@@ -11,29 +12,19 @@ class TryClef < Sinatra::Base
     set :clef_app_secret, CLEF_APP_SECRET
   end
 
-  helpers do
-    def generate_state
-      SecureRandom.urlsafe_base64 32
-    end
+  helpers LoginHelper
 
-    def logged_in?
-      current_user
-    end
-
-    def current_user
-      User.find id: session[:user_id]
-    end
+  def generate_state
+    state = -> { SecureRandom.urlsafe_base64 32 }
+    session[:state] = @state = state.call unless logged_in?
   end
 
   get '/' do
-    session[:state] = @state = generate_state unless logged_in?
+    generate_state
     haml :index
   end
 
-  get '/logout' do
-    session[:user_id] = nil
-    redirect "/"
-  end
 end
 
-require_relative "lib/clef_hook"
+require_relative "routes/login"
+require_relative "routes/logout"

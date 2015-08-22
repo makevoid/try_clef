@@ -1,4 +1,6 @@
 class User
+  # simple class to store the logged users and related infos in memory - next step: add redis
+
   USERS = []
 
   def self.find(id:)
