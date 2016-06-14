@@ -1,2 +1,4 @@
-CLEF_APP_ID     = ''
-CLEF_APP_SECRET = ''
+{
+  "CLEF_APP_ID":     "",
+  "CLEF_APP_SECRET": ""
+}
