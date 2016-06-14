@@ -1,0 +1,12 @@
+.s10{ height: 10px; }
+.s20{ height: 20px; }
+.s30{ height: 30px; }
+.s40{ height: 40px; }
+.s50{ height: 50px; }
+.s60{ height: 60px; }
+
+/* container: */
+.cont {
+  margin-top: 3%;
+  margin-left: 4%;
+}
