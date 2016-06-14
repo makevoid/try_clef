@@ -28,7 +28,8 @@
           .clef-centered { margin-left: 90px; }
         %svg.clef-centered{ height: 20, width: 20 }
           %path{ d: "M0 0 L10 15 L20 0", fill: "#39c" }
-        %script.clef-button{ src: "https://clef.io/v3/clef.js", type: "text/javascript" }.merge(clef_options) }
+
+        %script.clef-button{ { src: "https://clef.io/v3/clef.js", type: "text/javascript", data: { type: "login" }  }, clef_options }
         %svg.clef-centered{ height: 20, width: 20 }
           %path{ d: "M0 20 L10 5 L20 20", fill: "#39c" }
 
